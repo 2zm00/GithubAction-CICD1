@@ -1,0 +1,24 @@
+name: Manual Workflow
+
+# 수동 트리거 설정
+on:
+  workflow_dispatch:
+
+jobs:
+  print-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello from GitHub Actions!"
+        
+      - name: Print date
+        run : date
+        
+      - name: Show info
+        run: uname -a
+        
+      - name: Multiple command
+        run: |
+          python -V
+          echo "print('Hello from Python')" > hello.py
+          python hello.py                   
